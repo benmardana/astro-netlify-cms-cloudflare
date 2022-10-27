@@ -4,3 +4,13 @@ backend:
   branch: main
 publish_mode: editorial_workflow
 media_folder: "public/assets"
+
+collections:
+  - label: "Pages"
+    name: "pages"
+    files:
+      - label: "About Page"
+        name: "about"
+        file: "about.yml"
+        fields:
+          - { label: Title, name: title, widget: string }
