@@ -2,5 +2,5 @@ backend:
   name: github
   repo: benmcgarvey/promo
   branch: main
-  publish_mode: editorial_workflow
-  media_folder: public/assets
+publish_mode: editorial_workflow
+media_folder: "public/assets"
