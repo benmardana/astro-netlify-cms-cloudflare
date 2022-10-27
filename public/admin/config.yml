@@ -2,6 +2,7 @@ backend:
   name: github
   repo: benmcgarvey/promo
   branch: main
+  base_url: https://promo-dfh.pages.dev
 publish_mode: editorial_workflow
 media_folder: "public/assets"
 
