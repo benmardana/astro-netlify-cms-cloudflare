@@ -47,7 +47,11 @@ export namespace callback {
       });
       console.log({ responseBody });
 
-      return new Response(responseBody);
+      return new Response(responseBody, {
+        headers: {
+          "content-type": "text/html;charset=UTF-8",
+        },
+      });
     } catch (e: any) {
       console.log({ e });
       return new Response(core.renderBody("error", e.message), {

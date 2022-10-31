@@ -1,25 +1,4 @@
-import { AuthorizationCode } from "simple-oauth2";
-
 export namespace core {
-  export const authCode = (id: string, secret: string) => {
-    console.log({ id, secret });
-
-    const authCodeOptions = {
-      client: {
-        id,
-        secret,
-      },
-      auth: {
-        tokenHost: "https://github.com",
-        tokenPath: "/login/oauth/access_token",
-        authorizePath: "/login/oauth/authorize",
-      },
-    };
-    console.log({ authCodeOptions });
-
-    return new AuthorizationCode(authCodeOptions);
-  };
-
   export const renderBody = (
     status: string,
     content: {
