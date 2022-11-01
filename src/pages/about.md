@@ -1,5 +1,5 @@
 ---
-layout: ../layouts/about.astro
-title: Hello, World
+title: "[edit] Hello, World"
 description: It's working!
+layout: ../layouts/about.astro
 ---
