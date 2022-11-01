@@ -37,10 +37,7 @@ export namespace callback {
       }>(url);
       console.log({ access_token });
 
-      const responseString = html.responseString("success", {
-        token: access_token,
-        provider: "github",
-      });
+      const responseString = html.successResponseString(access_token);
       console.log({ responseString });
 
       return new Response(responseString, {
