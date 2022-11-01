@@ -1,4 +1,4 @@
-import { core } from "./core";
+import { oauth } from "./core";
 import { Env } from "./types";
 
 export namespace auth {
@@ -12,7 +12,7 @@ export namespace auth {
       });
     }
 
-    const url = core.getAuthURL(env.OAUTH_GITHUB_CLIENT_ID, host);
+    const url = oauth.getAuthURL(env.OAUTH_GITHUB_CLIENT_ID, host);
     console.log({
       url,
     });

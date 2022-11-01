@@ -1,5 +1,5 @@
 export namespace https {
-  export const getAccessToken = async (url: string) => {
+  export const post = async <T>(url: string) => {
     const response = await fetch(url, {
       method: "POST",
       headers: {
@@ -8,11 +8,7 @@ export namespace https {
     });
     console.log({ response });
 
-    const json = await response.json<{
-      access_token: string;
-      scope: string;
-      token_type: string;
-    }>();
+    const json = await response.json<T>();
     console.log({ json });
 
     return json;
