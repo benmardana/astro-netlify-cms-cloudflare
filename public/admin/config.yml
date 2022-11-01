@@ -4,14 +4,14 @@ backend:
   branch: main
   base_url: https://promo-dfh.pages.dev
 publish_mode: editorial_workflow
-media_folder: "public/assets"
+media_folder: 'public/assets'
 
 collections:
-  - label: "Pages"
-    name: "pages"
+  - label: 'Pages'
+    name: 'pages'
     files:
-      - label: "About Page"
-        name: "about"
-        file: "about.yml"
+      - label: 'About Page'
+        name: 'about'
+        file: '../src/pages/project/about.md'
         fields:
           - { label: Title, name: title, widget: string }

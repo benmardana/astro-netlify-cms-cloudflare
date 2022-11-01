@@ -1,7 +1,9 @@
 ---
 import '../styles/global.css';
+
+import * as about from '../pages/project/about.md';
 const {
-	title = 'Jeanine White: Personal Site',
+	title = about.frontmatter.title,
 	description = 'The personal site of Jeanine White',
 } = Astro.props;
 ---
