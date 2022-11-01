@@ -1,4 +1,5 @@
-import { core } from "./core/core";
+import { core } from "./core";
+import { https } from "./https";
 import { Env } from "./types";
 
 export namespace callback {
@@ -15,34 +16,25 @@ export namespace callback {
     const host = request.headers.get("host");
     console.log({ host });
 
-    const params = {
-      client_id: env.OAUTH_GITHUB_CLIENT_ID,
-      client_secret: env.OAUTH_GITHUB_CLIENT_SECRET,
-      code: code,
-      redirect_uri: `https://${host}/callback`,
-    };
-    const url = new URL("https://github.com/login/oauth/access_token");
-    url.search = new URLSearchParams(params).toString();
+    if (!host) {
+      return new Response("missing host", {
+        status: 500,
+      });
+    }
+
+    const url = core.getAccessTokenUrl(
+      env.OAUTH_GITHUB_CLIENT_ID,
+      env.OAUTH_GITHUB_CLIENT_SECRET,
+      code,
+      host
+    );
 
     try {
-      const response = await fetch(url.toString(), {
-        method: "POST",
-        body: url.search,
-        headers: {
-          Accept: "application/json",
-        },
-      });
-      console.log({ response });
+      const { access_token } = await https.getAccessToken(url.toString());
+      console.log({ access_token });
 
-      const json = await response.json<{
-        access_token: string;
-        scope: string;
-        token_type: string;
-      }>();
-      console.log({ json });
-
-      const responseBody = core.renderBody("success", {
-        token: json.access_token,
+      const responseBody = core.responseString("success", {
+        token: access_token,
         provider: "github",
       });
       console.log({ responseBody });
@@ -52,9 +44,8 @@ export namespace callback {
           "content-type": "text/html;charset=UTF-8",
         },
       });
-    } catch (e: any) {
-      console.log({ e });
-      return new Response(core.renderBody("error", e.message), {
+    } catch (e) {
+      return new Response(`error: ${core.getErrorMessage(e)}`, {
         status: 500,
       });
     }
