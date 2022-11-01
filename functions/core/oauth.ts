@@ -1,13 +1,20 @@
 export namespace oauth {
-  export const getAccessTokenUrl = (
-    client_id: string,
-    client_secret: string,
-    code: string,
-    host: string
-  ) => {
+  interface IGetAccessTokenUrl {
+    clientId: string;
+    clientSecret: string;
+    code: string;
+    host: string;
+  }
+
+  export const getAccessTokenUrl = ({
+    clientId,
+    clientSecret,
+    code,
+    host,
+  }: IGetAccessTokenUrl) => {
     const params = {
-      client_id,
-      client_secret,
+      client_id: clientId,
+      client_secret: clientSecret,
       code,
       redirect_uri: `https://${host}/callback`,
     };
@@ -17,9 +24,14 @@ export namespace oauth {
     return url.toString();
   };
 
-  export const getAuthURL = (client_id: string, host: string) => {
+  interface IGetAuthUrl {
+    clientId: string;
+    host: string;
+  }
+
+  export const getAuthUrl = ({ clientId, host }: IGetAuthUrl) => {
     const params = {
-      client_id,
+      client_id: clientId,
       redirect_uri: `https://${host}/callback`,
       scope: "repo,user",
     };

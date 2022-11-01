@@ -12,7 +12,10 @@ export namespace auth {
       });
     }
 
-    const url = oauth.getAuthURL(env.OAUTH_GITHUB_CLIENT_ID, host);
+    const url = oauth.getAuthUrl({
+      clientId: env.OAUTH_GITHUB_CLIENT_ID,
+      host,
+    });
     console.log({
       url,
     });

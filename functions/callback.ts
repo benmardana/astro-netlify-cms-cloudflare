@@ -22,12 +22,12 @@ export namespace callback {
       });
     }
 
-    const url = oauth.getAccessTokenUrl(
-      env.OAUTH_GITHUB_CLIENT_ID,
-      env.OAUTH_GITHUB_CLIENT_SECRET,
+    const url = oauth.getAccessTokenUrl({
+      clientId: env.OAUTH_GITHUB_CLIENT_ID,
+      clientSecret: env.OAUTH_GITHUB_CLIENT_SECRET,
       code,
-      host
-    );
+      host,
+    });
 
     try {
       const { access_token } = await https.post<{

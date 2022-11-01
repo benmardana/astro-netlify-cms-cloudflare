@@ -16,15 +16,14 @@ export namespace error {
     }
 
     try {
-      const stringifiedError = JSON.stringify(maybeError);
+      const stringifiedError =
+        maybeError !== undefined ? JSON.stringify(maybeError) : "undefined";
       console.log({ stringifiedError });
       return new Error(stringifiedError);
     } catch {
-      // fallback in case there's an error stringifying the maybeError
-      // like with circular references for example.
-      const errorError = JSON.stringify(maybeError);
-      console.log({ errorError });
-      return new Error(errorError);
+      const unknownError = "Unknown Error";
+      console.log({ unknownError });
+      return new Error(unknownError);
     }
   };
 
