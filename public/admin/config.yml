@@ -10,9 +10,9 @@ collections:
   - label: 'Pages'
     name: 'pages'
     files:
-      - label: 'About Page'
-        name: 'about'
-        file: 'src/pages/about.md'
+      - label: 'Index Page'
+        name: 'index'
+        file: 'src/pages/index.md'
         fields:
           - { label: Title, name: title, widget: string }
           - { label: Description, name: description, widget: string }
