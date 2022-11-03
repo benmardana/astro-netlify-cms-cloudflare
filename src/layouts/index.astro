@@ -1,5 +1,6 @@
 ---
 import MainHead from '../components/MainHead.astro';
+import IndexComponent from './index';
 import type { Index } from '../types';
 
 interface Props {
@@ -15,10 +16,6 @@ const { content } = Astro.props;
     <MainHead title={content.title} description={content.description} />
   </head>
   <body>
-    <header>
-      <h1>
-        <a class="underlined" href="#">{content.title}</a>
-      </h1>
-    </header>
+    <IndexComponent title={content.title} />
   </body>
 </html>

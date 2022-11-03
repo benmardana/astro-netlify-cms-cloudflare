@@ -10,7 +10,8 @@
     "preview": "astro preview",
     "astro": "astro",
     "test": "vitest",
-    "coverage": "vitest run --coverage"
+    "coverage": "vitest run --coverage",
+    "tsc": "tsc"
   },
   "dependencies": {
     "@astrojs/react": "^1.2.2",
