@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Preview = () => {
-  return <>Preview</>;
+  return <div>Preview</div>;
 };
 
 export default Preview;
