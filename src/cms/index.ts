@@ -1,5 +1,5 @@
 import CMS from 'netlify-cms-app';
-import Index from '../../layouts/index';
+import Index from '../layouts/index';
 
 CMS.init({
   config: {
