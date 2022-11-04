@@ -1,0 +1,15 @@
+---
+import MainHead from '../../components/MainHead.astro';
+---
+<html lang="en">
+<head>
+  <MainHead
+    title="Content Manager"
+    description="Web admin page for managing website content"
+  />
+</head>
+<body>
+  <!-- Include the script that builds the page and powers Netlify CMS -->
+  <script type="module" src={Astro.resolve('./cms.ts')}></script>
+</body>
+</html>
