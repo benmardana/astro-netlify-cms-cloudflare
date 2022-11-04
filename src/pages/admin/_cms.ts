@@ -36,7 +36,7 @@ CMS.init({
   },
 });
 
-CMS.registerPreviewStyle('../../styles/global.css');
+CMS.registerPreviewStyle('/public/global.css');
 CMS.registerPreviewTemplate('index', ({ entry }) => {
   const props = entry.get('data').toJS();
 
