@@ -9,7 +9,8 @@ import MainHead from '../../components/MainHead.astro';
   />
 </head>
 <body>
-  <!-- Include the script that builds the page and powers Netlify CMS -->
-  <script type="module" src="./_cms"></script>
+  <script>
+    import './_cms';
+  </script>
 </body>
 </html>
