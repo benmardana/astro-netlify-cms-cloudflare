@@ -7,7 +7,7 @@ CMS.init({
       name: 'github',
       repo: 'benmcgarvey/promo',
       branch: 'main',
-      base_url: 'https://promo-dfh.pages.dev/auth'
+      base_url: 'https://promo-dfh.pages.dev'
     },
     load_config_file: false,
     publish_mode: 'editorial_workflow',
