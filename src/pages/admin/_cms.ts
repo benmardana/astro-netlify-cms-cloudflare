@@ -1,6 +1,3 @@
-// @ts-ignore
-window.CMS_MANUAL_INIT = true;
-
 import CMS from 'netlify-cms-app';
 import Index from '../../layouts/index';
 
@@ -10,6 +7,7 @@ CMS.init({
       name: 'github',
       repo: 'benmcgarvey/promo',
       branch: 'main',
+      base_url: 'https://promo-dfh.pages.dev/auth'
     },
     load_config_file: false,
     publish_mode: 'editorial_workflow',
