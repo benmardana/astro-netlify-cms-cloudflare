@@ -1,6 +1,9 @@
 import CMS from 'netlify-cms-app';
 import Index from '../../layouts/index';
 
+// @ts-ignore
+window.CMS_MANUAL_INIT = true
+
 CMS.init({
   config: {
     backend: {
