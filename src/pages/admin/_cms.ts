@@ -17,7 +17,7 @@ CMS.init({
         name: 'pages',
         files: [
           {
-            label: 'Index',
+            label: 'Index Page',
             name: 'index',
             file: 'src/pages/index.md',
             fields: [
