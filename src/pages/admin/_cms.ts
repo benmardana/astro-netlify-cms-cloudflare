@@ -1,8 +1,8 @@
+// @ts-ignore
+window.CMS_MANUAL_INIT = true;
+
 import CMS from 'netlify-cms-app';
 import Index from '../../layouts/index';
-
-// @ts-ignore
-window.CMS_MANUAL_INIT = true
 
 CMS.init({
   config: {
@@ -11,6 +11,7 @@ CMS.init({
       repo: 'benmcgarvey/promo',
       branch: 'main',
     },
+    load_config_file: false,
     publish_mode: 'editorial_workflow',
     media_folder: 'public/assets',
     site_url: 'https://promo-dfh.pages.dev',
