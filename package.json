@@ -4,14 +4,12 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
     "test": "vitest",
-    "coverage": "vitest run --coverage",
-    "tsc": "tsc"
+    "coverage": "vitest run --coverage"
   },
   "dependencies": {
     "@astrojs/react": "^1.2.2",

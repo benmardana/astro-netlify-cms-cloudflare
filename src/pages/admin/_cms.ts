@@ -24,7 +24,7 @@ CMS.init({
             file: 'src/pages/index.md',
             fields: [
               { label: 'Title', name: 'title', widget: 'string' },
-              { label: 'Description', name: 'description', widget: 'string' },
+              { label: 'Description', name: 'description', widget: 'hidden' },
               { label: 'Layout', name: 'layout', widget: 'hidden' },
             ],
           },

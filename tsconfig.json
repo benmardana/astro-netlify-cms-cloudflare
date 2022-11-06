@@ -5,5 +5,4 @@
     "jsxImportSource": "react",
     "noEmit": false,
   },
-  "files": ["src/layouts/index.tsx"]
 }

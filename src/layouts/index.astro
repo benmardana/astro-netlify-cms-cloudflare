@@ -1,10 +1,12 @@
 ---
 import MainHead from '../components/MainHead.astro';
 import IndexComponent from './index';
-import type { Index } from '../types';
 
 interface Props {
-	content: Index;
+	content: {
+    title: string;
+    description: string;
+  };
 }
 
 const { content } = Astro.props;
