@@ -10,7 +10,7 @@ export namespace html {
 <script>
   const receiveMessage = (message) => {
     window.opener.postMessage(
-      "authorization:${content.provider}:success:${JSON.stringify(content)}",
+      'authorization:${content.provider}:success:${JSON.stringify(content)}',
       message.origin
     );
 

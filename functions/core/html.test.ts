@@ -11,7 +11,7 @@ test("renders correct html response", () => {
 <script>
   const receiveMessage = (message) => {
     window.opener.postMessage(
-      "authorization:github:success:{"provider":"github","token":"${token}"}",
+      'authorization:github:success:{"provider":"github","token":"${token}"}',
       message.origin
     );
 
