@@ -1,5 +1,5 @@
 ---
-layout: ../layouts/index.astro
-title: Hello, World
+title: Hello, Suellan
 description: Hello, World!
+layout: ../layouts/index.astro
 ---
